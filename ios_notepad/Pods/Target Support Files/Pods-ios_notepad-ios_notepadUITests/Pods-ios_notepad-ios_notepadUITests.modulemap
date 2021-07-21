@@ -1,0 +1,6 @@
+framework module Pods_ios_notepad_ios_notepadUITests {
+  umbrella header "Pods-ios_notepad-ios_notepadUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

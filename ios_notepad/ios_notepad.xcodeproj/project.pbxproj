@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		010CEC1726A94A0A000E2398 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010CEC1626A94A0A000E2398 /* HomeView.swift */; };
 		022150778D0459F1DA69779F /* Pods_ios_notepad_ios_notepadUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBA0C8F4960770BB0FB4DBF3 /* Pods_ios_notepad_ios_notepadUITests.framework */; };
 		03F2BDAA26A8591400405020 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F2BDA926A8591400405020 /* AppDelegate.swift */; };
 		03F2BDAC26A8591400405020 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F2BDAB26A8591400405020 /* SceneDelegate.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		010CEC1626A94A0A000E2398 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		03F2BDA626A8591400405020 /* ios_notepad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios_notepad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03F2BDA926A8591400405020 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03F2BDAB26A8591400405020 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				03F2BDB226A8591500405020 /* Assets.xcassets */,
 				03F2BDB426A8591500405020 /* LaunchScreen.storyboard */,
 				03F2BDB726A8591500405020 /* Info.plist */,
+				010CEC1626A94A0A000E2398 /* HomeView.swift */,
 			);
 			path = ios_notepad;
 			sourceTree = "<group>";
@@ -165,7 +168,6 @@
 				253192B8FD4A9C306844A270 /* Pods-ios_notepadTests.debug.xcconfig */,
 				814EEBEDDB3468BCABCBE022 /* Pods-ios_notepadTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -408,6 +410,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03F2BDAE26A8591400405020 /* ViewController.swift in Sources */,
+				010CEC1726A94A0A000E2398 /* HomeView.swift in Sources */,
 				03F2BDAA26A8591400405020 /* AppDelegate.swift in Sources */,
 				03F2BDAC26A8591400405020 /* SceneDelegate.swift in Sources */,
 			);

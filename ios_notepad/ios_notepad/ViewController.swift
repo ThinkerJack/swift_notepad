@@ -7,21 +7,25 @@
 
 import UIKit
 import SnapKit
-
-class ViewController: UIViewController {
+protocol HomeButtomDelegate {
+    func homeButtomClick(title:String)
+}
+class ViewController: UIViewController, HomeButtomDelegate {
+    
     var homeView:HomeView?
     var dataArray:Array<String>?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "点滴生活"
         self.edgesForExtendedLayout = UIRectEdge()
-        dataArray = ["生活","工作","学习","会议列表","健身计划"]
+        DataManager.openDataBase();
+        dataArray = DataManager.getGroupData()
         self.installUI()
     }
     func installUI(){
         homeView = HomeView(frame: CGRect(x:0,y:0,width: self.view.frame.size.width,height: self.view.frame.size.height-64))
         self.view.addSubview(homeView!)
-        homeView?.dataArray = ["生活","工作","学习","会议列表","健身计划","生活","工作","学习","会议列表","健身计划","生活","工作","学习","会议列表","健身计划"]
+        homeView?.dataArray = dataArray
         homeView?.updateLayout()
         installNavigationItem()
     }
@@ -47,13 +51,18 @@ class ViewController: UIViewController {
             self.dataArray?.append(alertController.textFields!.first!.text!)
             self.homeView?.dataArray = self.dataArray
             self.homeView?.updateLayout()
+            DataManager.saveGroup(name: alertController.textFields!.first!.text!)
             
          })
         alertController.addAction(alertItem)
         alertController.addAction(alertItemAdd)
         self.present(alertController, animated: true, completion: nil)
     }
-    
+    func homeButtomClick(title: String) {
+        let controller = NodeListTableViewController()
+        controller.name = title
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
     
 }
 

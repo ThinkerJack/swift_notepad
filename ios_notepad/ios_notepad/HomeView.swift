@@ -8,6 +8,9 @@
 import UIKit
 
 class HomeView: UIScrollView {
+    
+    var homeButtonDelegate:HomeButtomDelegate?
+    
     let interitemSpacing = 15
     let lineSpacing = 25
     var dataArray:Array<String>?
@@ -42,7 +45,8 @@ class HomeView: UIScrollView {
     }
 
    @objc func btnClick(btn:UIButton){
-        print(dataArray![btn.tag])
+        homeButtonDelegate?.homeButtomClick(title: dataArray![btn.tag])
+
     }
 
 }

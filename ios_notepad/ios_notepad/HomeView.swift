@@ -46,7 +46,6 @@ class HomeView: UIScrollView {
 
    @objc func btnClick(btn:UIButton){
         homeButtonDelegate?.homeButtomClick(title: dataArray![btn.tag])
-
     }
 
 }

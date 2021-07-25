@@ -14,17 +14,23 @@ class ViewController: UIViewController, HomeButtomDelegate {
     
     var homeView:HomeView?
     var dataArray:Array<String>?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "点滴生活"
-        self.edgesForExtendedLayout = UIRectEdge()
+        installDataBase()
+        installUI()
+    }
+    func installDataBase(){
         DataManager.openDataBase();
-        dataArray = DataManager.getGroupData()
-        self.installUI()
+        dataArray = DataManager.getGroup()
     }
     func installUI(){
+        self.title = "点滴生活"
+        self.edgesForExtendedLayout = UIRectEdge()
         homeView = HomeView(frame: CGRect(x:0,y:0,width: self.view.frame.size.width,height: self.view.frame.size.height-64))
-        self.view.addSubview(homeView!)
+        self.view.addSubview(homeView!) 
+        //这句千万不能少
+        homeView?.homeButtonDelegate = self
         homeView?.dataArray = dataArray
         homeView?.updateLayout()
         installNavigationItem()

@@ -8,13 +8,13 @@
 import UIKit
 
 class NodeListTableViewController: UITableViewController {
-    var dataArray = Array<NoteModel>();
+    var dataArray = Array<NoteTable>();
     var name:String?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = name
         for _ in 0...10{
-            var model = NoteModel()
+            var model = NoteTable()
             model.time = "2021.11.11"
             model.title = "狂欢购物"
             model.body = "购物清单。。。。"

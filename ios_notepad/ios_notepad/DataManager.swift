@@ -11,7 +11,7 @@ import GRDB
 struct GroupTable: Codable, FetchableRecord, PersistableRecord {
     var groupName: String
 }
-struct NoteModel: Codable, FetchableRecord, PersistableRecord {
+struct NoteTable: Codable, FetchableRecord, PersistableRecord {
     var time: String?
     var title: String?
     var body: String?
@@ -19,48 +19,57 @@ struct NoteModel: Codable, FetchableRecord, PersistableRecord {
     var noteId: Int?
 }
 class DataManager: NSObject {
-    static var dbQueue: DatabaseQueue?
-    static var isOpen = false;
+    static var dbQueue: DatabaseQueue!
     class func openDataBase(){
         let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
         let file = path+"/DataBase.sqlite"
         dbQueue = try! DatabaseQueue(path: file)
-        isOpen = true;
-        try! self.dbQueue?.inDatabase { (db) -> Void in
-            // 判断是否存在数据库
+        try! self.dbQueue.inDatabase { (db) -> Void in
             if try db.tableExists("groupTable") {
-                debugPrint("表已经存在")
-                return
+                debugPrint("groupTable已经存在")
+            }else{
+                try db.create(table: "groupTable") { t in
+                    t.column("groupName", Database.ColumnType.text)
+                }
             }
-            // 创建数据库表
-            try db.create(table: "groupTable") { t in
-                t.column("groupName", Database.ColumnType.text)
-                
+            if try db.tableExists("noteTable") {
+                debugPrint("noteTable已经存在")
+            }else{
+                try db.create(table: "noteTable") { t in
+                    t.autoIncrementedPrimaryKey("noteId")
+                    t.column("time", Database.ColumnType.text)
+                    t.column("title", Database.ColumnType.text)
+                    t.column("body", Database.ColumnType.text)
+                    t.column("group", Database.ColumnType.text)
+                }
             }
-            
         }
-        
     }
     class func saveGroup(name:String){
-        if !isOpen{
-            self.openDataBase()
-        }
-        
-        try! dbQueue?.write { db in
+        try! dbQueue.write { db in
             try GroupTable(groupName: name).insert(db)
         }
         
     }
-    class func getGroupData()->[String]?{
-        
-        let g:[GroupTable]? = try! dbQueue?.write { db in
+    class func getGroup()->[String]{
+        let list:[GroupTable] = try! dbQueue.read { db in
             try GroupTable.fetchAll(db)
         }
         var array = Array<String>()
-        g?.forEach({(element) in array.append(element.groupName)})
+        list.forEach({(element) in array.append(element.groupName)})
         return array
         
-        
+    }
+    class func addNote(note:NoteTable){
+        try! dbQueue.write { db in
+            try note.insert(db)
+        }
+    }
+    class func getNote(groupName:String)->[NoteTable]{
+        let list:[NoteTable] = try! dbQueue.read { db in
+            try NoteTable.fetchAll(db,sql: "select * from noteTable where group = ?",arguments: [groupName])
+        }
+        return list;
     }
     
     

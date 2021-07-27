@@ -13,32 +13,37 @@ class NodeListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = name
-        for _ in 0...10{
-            var model = NoteTable()
-            model.time = "2021.11.11"
-            model.title = "狂欢购物"
-            model.body = "购物清单。。。。"
-            dataArray.append(model)
-        }
         installNavgationItem()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        dataArray = DataManager.getNote(groupName: name!)
+        self.tableView.reloadData()
     }
     func installNavgationItem(){
         let addItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNote))
         let deleteItem = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(deteleGroup))
         self.navigationItem.rightBarButtonItems = [addItem,deleteItem]
-
         
     }
     @objc func addNote(){
-        
+        let infoViewController = NoteInfoViewController()
+        infoViewController.group = name!
+        infoViewController.isNew = true
+        self.navigationController?.pushViewController(infoViewController, animated: true)
     }
     @objc func deteleGroup(){
-        
+        let alertController = UIAlertController(title: "警告", message: "您确定要删除此分组下所有记事吗？", preferredStyle: .alert)
+        let action  = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        let action2  = UIAlertAction(title: "删除", style: .destructive, handler: {(UIAlertAction)-> Void in
+            DataManager.deleteGroup(name: self.name!)
+            self.navigationController!.popViewController(animated: true)
+            
+        })
+        alertController.addAction(action)
+        alertController.addAction(action2)
+        self.present(alertController, animated: true, completion: nil)
+
     }
     // MARK: - Table view data source
     
@@ -63,10 +68,16 @@ class NodeListTableViewController: UITableViewController {
         cell?.textLabel?.text = model.title
         cell?.detailTextLabel?.text = model.time
         cell?.accessoryType = .disclosureIndicator
-    
         return cell!
      }
-   
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let infoViewController = NoteInfoViewController()
+        infoViewController.group = name!
+        infoViewController.isNew = false
+        infoViewController.noteTable = dataArray[indexPath.row]
+        self.navigationController?.pushViewController(infoViewController, animated: true)
+    }
     
     /*
      // Override to support conditional editing of the table view.

@@ -20,9 +20,14 @@ class ViewController: UIViewController, HomeButtomDelegate {
         installDataBase()
         installUI()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        dataArray = DataManager.getGroup()
+        self.homeView?.dataArray = dataArray
+        self.homeView?.updateLayout()
+    }
     func installDataBase(){
         DataManager.openDataBase();
-        dataArray = DataManager.getGroup()
     }
     func installUI(){
         self.title = "点滴生活"

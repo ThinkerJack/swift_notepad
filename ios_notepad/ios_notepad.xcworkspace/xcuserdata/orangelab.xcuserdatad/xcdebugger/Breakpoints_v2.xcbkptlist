@@ -14,8 +14,8 @@
             filePath = "ios_notepad/DataManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "openDataBase()"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,9 +30,9 @@
             filePath = "ios_notepad/DataManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "saveGroup(name:)"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "openDataBase()"
             landmarkType = "7">
             <Locations>
                <Location
@@ -78,8 +78,8 @@
             filePath = "ios_notepad/DataManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "openDataBase()"
             landmarkType = "7">
          </BreakpointContent>
@@ -120,7 +120,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "0A29D720-33B4-4AE7-B58C-81899B74ED01"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios_notepad/NoteInfoViewController.swift"
@@ -129,6 +129,70 @@
             startingLineNumber = "17"
             endingLineNumber = "17"
             landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4C0EF9BC-04C4-48BF-B9C6-02B2770F8E8E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ios_notepad/DataManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "getNote(groupName:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4C0EF9BC-04C4-48BF-B9C6-02B2770F8E8E - 88d8deeb91a3ca9f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static ios_notepad.DataManager.getNote(groupName: Swift.String) -&gt; Swift.Array&lt;ios_notepad.NoteTable&gt;"
+                  moduleName = "ios_notepad"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/orangelab/project/demo/android-ios-flutter_notepad/ios_notepad/ios_notepad/DataManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "100">
+               </Location>
+               <Location
+                  uuid = "4C0EF9BC-04C4-48BF-B9C6-02B2770F8E8E - bdd7fc2d045ad048"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (GRDB.Database) throws -&gt; Swift.Array&lt;ios_notepad.NoteTable&gt; in static ios_notepad.DataManager.getNote(groupName: Swift.String) -&gt; Swift.Array&lt;ios_notepad.NoteTable&gt;"
+                  moduleName = "ios_notepad"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/orangelab/project/demo/android-ios-flutter_notepad/ios_notepad/ios_notepad/DataManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "22">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DA1568C7-8F75-4400-B66B-E3B62BCF19D9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ios_notepad/NodeListTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

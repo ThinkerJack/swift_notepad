@@ -32,7 +32,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "49"
             endingLineNumber = "49"
-            landmarkName = "openDataBase()"
+            landmarkName = "saveGroup(name:)"
             landmarkType = "7">
             <Locations>
                <Location

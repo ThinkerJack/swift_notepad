@@ -1,6 +1,6 @@
-![](https://img-blog.csdnimg.cn/5cf1ef2c34a84df6a8520f996dc6b138.png)
+![](https://img-blog.csdnimg.cn/20211014152112852.png)
 
-前端时间使用iOS技术编写了一个记事本APP，[github地址](https://github.com/ThinkerJack/android-ios-flutter_notepad)。
+前端时间使用iOS技术编写了一个记事本APP，[github地址](https://github.com/ThinkerJack/android-ios-flutter_notepad)，https://github.com/ThinkerJack/android-ios-flutter_notepad。
 
 # ios_notepad
 
@@ -22,7 +22,9 @@ UI框架：UIKit
 
 ## 3.项目截图
 
-<img src="https://img-blog.csdnimg.cn/56b9067b42d64e0790bd8dce4755082a.png" style="zoom: 25%;" /><img src="https://img-blog.csdnimg.cn/b9eaa8f15e22495ba23a459167b9294c.png" style="zoom: 50%;" /><img src="https://img-blog.csdnimg.cn/3f36ad8153c14385a00aba8fbce730ba.png" style="zoom:50%;" /><img src="https://img-blog.csdnimg.cn/3474e1c07636435f88409bea199596d8.png" style="zoom:50%;" /><img src="https://img-blog.csdnimg.cn/e4e83d9a8a43436d9bf1673cb3fef2f4.png" style="zoom: 50%;" />
+![](https://img-blog.csdnimg.cn/56b9067b42d64e0790bd8dce4755082a.png)![](https://img-blog.csdnimg.cn/b9eaa8f15e22495ba23a459167b9294c.png)
+
+![](https://img-blog.csdnimg.cn/3f36ad8153c14385a00aba8fbce730ba.png)![](https://img-blog.csdnimg.cn/3474e1c07636435f88409bea199596d8.png)![](https://img-blog.csdnimg.cn/e4e83d9a8a43436d9bf1673cb3fef2f4.png)
 
 ## 4.代码逻辑简述
 
@@ -75,3 +77,7 @@ UI框架：UIKit
 # 写在末尾
 
 Android 和 Flutter 端的工程不打算写了，做同一种事情的工具掌握三种并没有什么意义，软件开发核心还是基础和流程，拒绝做API boy。
+
+![](https://img-blog.csdnimg.cn/c66cc07b674c424ba11ec6825e22a640.png)
+
+![](https://img-blog.csdnimg.cn/46f9ed15f914479ab130d47e9578e721.png)
